@@ -15,6 +15,7 @@ disksize = "5G"
 sockets = 1
 cores = 1
 memory = 1024
+balloon = 512
 
 # vm user
 user = "tfuser"

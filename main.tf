@@ -34,7 +34,7 @@ resource "proxmox_vm_qemu" "proxmox-vm" {
 
   # resources
   memory = var.memory
-  balloon = 256
+  balloon = var.balloon
   sockets = var.sockets
   cores = var.cores
   cpu = "kvm64"
@@ -89,10 +89,10 @@ resource "proxmox_vm_qemu" "proxmox-vm" {
   }
 
   provisioner "remote-exec" {
-    on_failure = continue
+    # on_failure = continue
     inline = [
-      "hostnamectl set-hostname ${var.hostnames[count.index]}",
-      "chmod +x /tmp/provision.sh",
+      "sudo hostnamectl set-hostname ${var.hostnames[count.index]}",
+      "sudo chmod +x /tmp/provision.sh",
       "sudo /tmp/provision.sh"
     ]
   }

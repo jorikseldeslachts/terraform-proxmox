@@ -3,6 +3,13 @@
 # set timezone
 timedatectl set-timezone ${timezone}
 
+# make sure apt lock is free
+killall apt apt-get
+rm /var/lib/apt/lists/lock
+rm /var/cache/apt/archives/lock
+rm /var/lib/dpkg/lock
+dpkg --configure -a
+
 # install needed packages
 apt update -y && \
 apt upgrade -y
