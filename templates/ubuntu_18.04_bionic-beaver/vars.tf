@@ -11,7 +11,7 @@ target_node = "proxmox-node"
 
 # vm resources
 storage_name = "local"
-disksize = "10G"
+disksize = "5G"
 sockets = 1
 cores = 1
 memory = 1024
