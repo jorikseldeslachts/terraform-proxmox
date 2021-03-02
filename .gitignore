@@ -1,0 +1,7 @@
+# configs
+cloud-init-example/
+
+# terraform
+.terraform
+.terraform.lock.hcl
+*terraform.tfstate*
